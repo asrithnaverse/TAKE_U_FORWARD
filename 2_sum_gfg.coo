@@ -1,0 +1,18 @@
+class Solution {
+  public:
+    bool twoSum(vector<int>& arr, int target) {
+        // code here
+        unordered_map<int,int>mp;
+        int i;
+        for(i=0;i<arr.size();i++)
+        {
+            auto y=mp.find(target-arr[i]);
+            if(y!=mp.end())
+            {
+                return true;
+            }
+            mp[arr[i]]=i;
+        }
+        return false;
+    }
+};
